@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=nimbleio-all-1.0.8-SNAPSHOT-source.jar -DgroupId=com.generallycloud -DartifactId=nimbleio-all -Dversion=1.0.8-SNAPSHOT -Dpackaging=jar -Dclassifier=sources
