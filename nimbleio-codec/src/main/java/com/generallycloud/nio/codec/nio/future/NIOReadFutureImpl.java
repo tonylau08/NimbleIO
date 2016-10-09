@@ -44,6 +44,9 @@ public class NIOReadFutureImpl extends AbstractIOReadFuture implements NIOReadFu
 	}
 
 	public Integer getFutureID() {
+		if (futureID == null) {
+			futureID = 0;
+		}
 		return futureID;
 	}
 
