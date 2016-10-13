@@ -115,6 +115,10 @@ public class IOSessionImpl implements IOSession {
 		if (!socketChannel.isOpened()) {
 
 			IOEventHandle handle = future.getIOEventHandle();
+			
+			if (handle == null) {
+				handle = context.getIOEventHandleAdaptor();
+			}
 
 			handle.exceptionCaught(this, future, new DisconnectException("disconnected"), IOEventState.WRITE);
 			
