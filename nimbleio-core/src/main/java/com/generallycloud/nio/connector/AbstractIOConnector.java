@@ -34,12 +34,15 @@ public abstract class AbstractIOConnector extends AbstractIOService implements I
 		EventLoopThread loopThread = getSelectorLoopThread();
 
 		if (loopThread != null && loopThread.isMonitor(thread)) {
+			
 			session.getEventLoop().dispatch(new Runnable() {
 				
 				public void run() {
 					close0();
 				}
 			});
+			
+			return;
 		}
 		
 		close0();
